@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,27 +12,45 @@
     <title>Document</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
+
 <body>
-    <div class="container" id="app">
-        <div class="list-group">
-            <button type="button" class="list-group-item list-group-item-action">
-              Cras justo odio
-            </button>
+    <div class="container">
+        <div class="card" id="app">
+            <div class="card-img-top">
+                <h1>Progetto:{{songName}}</h1>
+
+            </div>
+            <div class="card-body">
+                <div class="list-group">
+                    <label v-for="elemento, i in instrumentList" class="border-dark border rounded-5 mb-2">
+                        <div class="form-check form-switch d-flex justify-content-md-between align-items-center">
+                            <input class="form-check-input" v-model="elemento.recorded" type="checkbox" role="switch" checked>
+                            <h3>{{elemento.instrument}}</h3>
+        
+                            <button class="btn btn-danger rounded-5" @click="clickDelete(i)" >delete</button>
+                        </div>
+
+                    </label>
+                </div>
+            </div>
+        </div>
 
 
 
 
 
 
-    
-    
-    
+
+
+
     </div>
-    
 
-    
-<script src="JS/main.js"></script>
+
+
+    <script src="JS/main.js"></script>
 </body>
-</html>    
+
+</html>
 </body>
-</html>  
+
+</html>
